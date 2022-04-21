@@ -1,0 +1,60 @@
+ 
+from socketserver import DatagramRequestHandler
+
+
+class Musician(): 
+  def __init__(self, name, instrument): 
+    self.name = name 
+    self.instrument = instrument 
+    def __str__(self): 
+      pass 
+    def __repr__(self): 
+      pass
+    def play_solo(): 
+      return f'currently playing {self.instrument}'
+
+
+class Band(Musician): 
+  def __init__(self, name, members=[]): 
+    self.name = name
+    self.members = members
+    
+
+# nirvanna = Band('Nirvana', ['kurt', 'dave', 'billy'])
+
+class Guitarist(Musician): 
+  def __init__(self, name): 
+    self.name = name 
+    self.instrument = "guitar"
+  def get_instrument(self): 
+    return self.instrument
+  def __str__(self): 
+    return f"My name is {self.name} and I play {self.instrument}"  
+  def __repr__(self):
+    return f"{self.__class__.__name__} instance. Name = {self.name}"   
+
+# guitarist1 = Guitarist('Kurt')
+# nirvanna = Band('Nirvanna', [guitarist1])
+
+class Drummer(Musician): 
+  def __init__(self, name): 
+    self.name = name 
+    self.instrument = "drums"
+  def get_instrument(self): 
+    return self.instrument
+  def __str__(self): 
+    return f"My name is {self.name} and I play {self.instrument}" 
+  def __repr__(self):
+    return f"{self.__class__.__name__} instance. Name = {self.name}"
+
+
+class Bassist(Musician): 
+  def __init__(self, name): 
+    self.name = name 
+    self.instrument = "bass"
+  def get_instrument(self): 
+    return self.instrument
+  def __str__(self): 
+    return f"My name is {self.name} and I play {self.instrument}" 
+  def __repr__(self):
+    return f"{self.__class__.__name__} instance. Name = {self.name}"
