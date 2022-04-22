@@ -15,10 +15,16 @@ class Musician():
 
 
 class Band(Musician): 
-  def __init__(self, name, members=[]): 
-    self.name = name
+  def __init__(self, name, members=None): 
+    if members is None: 
+      members = []
     self.members = members
-    
+    self.name = name
+  def play_solos(self): 
+    solos = []
+    for musician in self.members: 
+      solos.append(musician.play_solo())
+    return solos
 
 # nirvanna = Band('Nirvana', ['kurt', 'dave', 'billy'])
 
@@ -28,6 +34,8 @@ class Guitarist(Musician):
     self.instrument = "guitar"
   def get_instrument(self): 
     return self.instrument
+  def play_solo(self): 
+    return "face melting guitar solo"
   def __str__(self): 
     return f"My name is {self.name} and I play {self.instrument}"  
   def __repr__(self):
@@ -42,6 +50,8 @@ class Drummer(Musician):
     self.instrument = "drums"
   def get_instrument(self): 
     return self.instrument
+  def play_solo(self): 
+    return "rattle boom crash"
   def __str__(self): 
     return f"My name is {self.name} and I play {self.instrument}" 
   def __repr__(self):
@@ -54,6 +64,8 @@ class Bassist(Musician):
     self.instrument = "bass"
   def get_instrument(self): 
     return self.instrument
+  def play_solo(self): 
+    return  "bom bom buh bom"
   def __str__(self): 
     return f"My name is {self.name} and I play {self.instrument}" 
   def __repr__(self):
